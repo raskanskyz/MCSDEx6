@@ -24,11 +24,22 @@ namespace MCSDEx6.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddUser(string user)
+        public ActionResult GetUser(string userId)
         {
-            Users deserializedUser = JsonConvert.DeserializeObject<Users>(user);
+            return Json(repo.GetUser(Int32.Parse(userId)), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult AddUser(Users deserializedUser)
+        {
             repo.AddUser(deserializedUser);
             return Json(new {success = true, message = "some message from server!" });
+        }
+
+        public JsonResult UpdateUser(Users deserializedUser)
+        {
+            repo.UpdateUserDetails(deserializedUser);
+            return Json(new { success = true, message = "updated info!"});
         }
     }
 }

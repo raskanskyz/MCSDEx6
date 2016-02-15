@@ -21,7 +21,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <form id="addUserForm" >
+                <form id="updateUserForm">
+                    <div class="form-group">
+                        <label for="userNameLoad">User ID:</label>
+                        <input type="text" class="form-control" id="userNameLoad" placeholder="user to load" />
+                    </div>
+                    <button type="button" id="loadUserButton" class="btn btn-default">Load User Info</button>
+                    <br />
+                    <br />
+                    <br />
+                </form>
+                <form>
                     <div class="form-group">
                         <label for="userName">User Name:</label>
                         <input type="text" class="form-control" id="userName" placeholder="username" name="username">
@@ -34,9 +44,8 @@
                         <label for="role">Role:</label>
                         <input type="text" class="form-control" id="role" placeholder="role/city" name="role">
                     </div>
-                    <button type="button" id="addUserBtn" class="btn btn-default">Add User</button>
                 </form>
-
+                <button type="button" id="updateUserBtn" class="btn btn-default">Update User Info</button>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
@@ -48,3 +57,4 @@
     <script src="Scripts/my.js"></script>
 </body>
 </html>
+

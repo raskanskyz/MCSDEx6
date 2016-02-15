@@ -17,6 +17,7 @@ namespace MCSDEx6.Models
         public void DeleteUser(Users usr)
         {
             db.Users.Remove(usr);
+            db.SaveChanges();
         }
 
         public IEnumerable<Users> GetAllUsers()
